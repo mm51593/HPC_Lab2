@@ -79,7 +79,7 @@ void convert_420p_to_444p(unsigned char *read, unsigned char *write, unsigned lo
 	unsigned long quadrant_num;
 	unsigned char *U;
 	unsigned char *V;
-	#pragma omp parallel for private (quadrant num, U, V) schedule(dynamic) collapse(2)
+	#pragma omp parallel for private (quadrant_num, U, V) schedule(dynamic) collapse(2)
 	for (unsigned long i = 0; i < frames; i++)
 	{
 		for (unsigned long j = 0; j < frame_size; j++)
